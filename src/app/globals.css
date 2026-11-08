@@ -1,0 +1,82 @@
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "tailwindcss";
+
+/*
+ * RelayOps tokens. Cool paper background, navy-charcoal ink, one spruce
+ * accent. Signal colours always appear with a text label and an icon.
+ */
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-paper: #f5f7f6;
+  --color-surface: #ffffff;
+  --color-sunken: #eef2f0;
+  --color-ink: #16202a;
+  --color-ink-2: #34404c;
+  --color-muted: #5b6773;
+  --color-faint: #8a949d;
+  --color-line: #dce1df;
+  --color-line-strong: #c3cbc8;
+
+  --color-accent: #1f6b57;
+  --color-accent-strong: #17533f;
+  --color-accent-soft: #e3f0ea;
+
+  --color-amber: #a85a0b;
+  --color-amber-soft: #fbf0e1;
+  --color-red: #b42318;
+  --color-red-soft: #fcebe9;
+  --color-blue: #2456a6;
+  --color-blue-soft: #e7eefa;
+  --color-violet: #6941c6;
+  --color-violet-soft: #f0ebfb;
+
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  --shadow-raise: 0 1px 0 rgb(22 32 42 / 0.04), 0 1px 3px rgb(22 32 42 / 0.06);
+  --shadow-pop: 0 12px 32px -8px rgb(22 32 42 / 0.22), 0 2px 6px rgb(22 32 42 / 0.08);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.45;
+    font-feature-settings: "tnum" 0;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-accent-soft);
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
